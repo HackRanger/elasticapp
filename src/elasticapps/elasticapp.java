@@ -82,10 +82,11 @@ public class elasticapp {
     static double odiCost = 0.95;
     // List of RI
     static ArrayList<VmInstance> runningRiInstances = new ArrayList<>();
+
     // List of ODI
     static ArrayList<VmInstance> runningOdiInstances = new ArrayList<>();
     // Total RI
-    static int totalRI = 1;
+    static int totalRI = 2;
 
 
     public static void main(String[] args) throws IOException, InterruptedException {

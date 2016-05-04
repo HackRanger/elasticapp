@@ -4,7 +4,9 @@
     <list default="true" id="3feae128-6c00-426f-b511-54e23890ea03" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/elasticapps/elasticapps/elasticapp.class" afterPath="$PROJECT_DIR$/out/production/elasticapps/elasticapps/elasticapp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/vms_billing_hours.csv" afterPath="$PROJECT_DIR$/logs/vms_billing_hours.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/RI_ODI_ACTIVE_BILLING_DATA_SET.csv" afterPath="$PROJECT_DIR$/logs/RI_ODI_ACTIVE_BILLING_DATA_SET.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/VM_BILLING_OF_ODI_DATA_SET.csv" afterPath="$PROJECT_DIR$/logs/VM_BILLING_OF_ODI_DATA_SET.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/VM_BILLING_OF_RI_DATA_SET.csv" afterPath="$PROJECT_DIR$/logs/VM_BILLING_OF_RI_DATA_SET.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/elasticapps/elasticapp.java" afterPath="$PROJECT_DIR$/src/elasticapps/elasticapp.java" />
     </list>
     <ignored path="elasticapps.iws" />
@@ -30,8 +32,8 @@
       <file leaf-file-name="elasticapp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/elasticapps/elasticapp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="433" column="0" selection-start-line="433" selection-start-column="0" selection-end-line="433" selection-end-column="0" />
+            <state relative-caret-position="447">
+              <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#VmInstance#0" expanded="false" />
@@ -456,8 +458,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/elasticapps/elasticapp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="433" column="0" selection-start-line="433" selection-start-column="0" selection-end-line="433" selection-end-column="0" />
+        <state relative-caret-position="447">
+          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#VmInstance#0" expanded="false" />

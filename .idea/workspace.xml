@@ -7,6 +7,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/RI_ODI_ACTIVE_BILLING_DATA_SET.csv" afterPath="$PROJECT_DIR$/logs/RI_ODI_ACTIVE_BILLING_DATA_SET.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/VM_BILLING_OF_ODI_DATA_SET.csv" afterPath="$PROJECT_DIR$/logs/VM_BILLING_OF_ODI_DATA_SET.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/VM_BILLING_OF_RI_DATA_SET.csv" afterPath="$PROJECT_DIR$/logs/VM_BILLING_OF_RI_DATA_SET.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/vms_billing_hours.csv" afterPath="$PROJECT_DIR$/logs/vms_billing_hours.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/elasticapps/elasticapp.java" afterPath="$PROJECT_DIR$/src/elasticapps/elasticapp.java" />
     </list>
     <ignored path="elasticapps.iws" />
@@ -32,13 +33,11 @@
       <file leaf-file-name="elasticapp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/elasticapps/elasticapp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+            <state relative-caret-position="353">
+              <caret line="272" column="91" selection-start-line="272" selection-start-column="91" selection-end-line="272" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#VmInstance#0" expanded="false" />
-                <element signature="method#scalingDecision#0;class#elasticapp#0" expanded="false" />
-                <element signature="method#getRequestCountsInTimeRange#0;class#elasticapp#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -376,8 +375,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#VmInstance#0" expanded="false" />
-            <element signature="method#scalingDecision#0;class#elasticapp#0" expanded="false" />
-            <element signature="method#getRequestCountsInTimeRange#0;class#elasticapp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -389,8 +386,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#VmInstance#0" expanded="false" />
-            <element signature="method#scalingDecision#0;class#elasticapp#0" expanded="false" />
-            <element signature="method#getRequestCountsInTimeRange#0;class#elasticapp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -402,8 +397,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#VmInstance#0" expanded="false" />
-            <element signature="method#scalingDecision#0;class#elasticapp#0" expanded="false" />
-            <element signature="method#getRequestCountsInTimeRange#0;class#elasticapp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -415,8 +408,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#VmInstance#0" expanded="false" />
-            <element signature="method#scalingDecision#0;class#elasticapp#0" expanded="false" />
-            <element signature="method#getRequestCountsInTimeRange#0;class#elasticapp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -428,8 +419,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#VmInstance#0" expanded="false" />
-            <element signature="method#scalingDecision#0;class#elasticapp#0" expanded="false" />
-            <element signature="method#getRequestCountsInTimeRange#0;class#elasticapp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -441,8 +430,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#VmInstance#0" expanded="false" />
-            <element signature="method#scalingDecision#0;class#elasticapp#0" expanded="false" />
-            <element signature="method#getRequestCountsInTimeRange#0;class#elasticapp#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -458,13 +445,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/elasticapps/elasticapp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+        <state relative-caret-position="353">
+          <caret line="272" column="91" selection-start-line="272" selection-start-column="91" selection-end-line="272" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#VmInstance#0" expanded="false" />
-            <element signature="method#scalingDecision#0;class#elasticapp#0" expanded="false" />
-            <element signature="method#getRequestCountsInTimeRange#0;class#elasticapp#0" expanded="false" />
           </folding>
         </state>
       </provider>

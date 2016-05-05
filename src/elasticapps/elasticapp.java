@@ -55,6 +55,10 @@ public class elasticapp {
 
     static final String VM_BILLING_OF_RI_DATA_SET = "/Users/subramanya/Documents/workspace/elasticapps/logs/VM_BILLING_OF_RI_DATA_SET.csv";
 
+    static final String COST_OF_PURE_ODI_DATA_SET = "/Users/subramanya/Documents/workspace/elasticapps/logs/COST_OF_PURE_ODI_DATA_SET.csv";
+
+    static final String COST_OF_RI_ODI_DATA_SET = "/Users/subramanya/Documents/workspace/elasticapps/logs/COST_OF_RI_ODI_DATA_SET.csv";
+
 
     static final String CSV_DELIMITOR = ",";
     static long startTimeStamp;
@@ -86,13 +90,13 @@ public class elasticapp {
     // List of ODI
     static ArrayList<VmInstance> runningOdiInstances = new ArrayList<>();
     // Total RI
-    static int totalRI = 2;
+    static int totalRI = 3;
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
         String line = "";
         BufferedReader br;
-        BufferedWriter bw,bwRI;
+        BufferedWriter bw,bwRI, bwCostODI, bwCostRiOdi;
         long timeStampT = 0;
         int totalRequestAtT = 0;
         String[] dataRow;
@@ -174,7 +178,9 @@ public class elasticapp {
                             .append(new Date(runningInstance.get(i).startOfActivePeriod * 1000)).append(" ")
                             .append("Active End Time: ").append(new Date(runningInstance.get(i).endOfActivePeriod * 1000))
                             .append(" ").append("Minutes Used: ").append((runningInstance.get(i).billingHourEndTime
-                                    - runningInstance.get(i).billingHourStartTime) / 60);
+                                    - runningInstance.get(i).billingHourStartTime) / 60)
+                            .append(" ").append("Cost: ").append(odiCost * (((runningInstance.get(i).billingHourEndTime
+                                    - runningInstance.get(i).billingHourStartTime) / 60)/60));
                     bw1.write(sb.toString());
                     bw1.newLine();
                     bw1.flush();
@@ -206,7 +212,7 @@ public class elasticapp {
 
             bw1 = new BufferedWriter(new FileWriter(VM_BILLING_OF_RI_DATA_SET, true));
             for (int i = 0; i < runningRiInstances.size(); i++) {
-                if(runningRiInstances.get(i).canExtend) {
+
                     StringBuilder sb = new StringBuilder().append("VM-ID ").append(runningRiInstances.get(i).machineID)
                             .append(" ").append("Billing Start Time: ")
                             .append(new Date(runningRiInstances.get(i).billingHourStartTime * 1000)).append(" ")
@@ -221,9 +227,55 @@ public class elasticapp {
                     bw1.write(sb.toString());
                     bw1.newLine();
                     bw1.flush();
-                }
+
             }
             bw1.close();
+
+
+           // Calculate Cost of pure ODI.
+            bwCostODI =new BufferedWriter(new FileWriter(COST_OF_PURE_ODI_DATA_SET));
+            double totalCost = 0.0;
+            for (int i = 0; i < runningInstance.size(); i++) {
+
+                totalCost += odiCost * (((runningInstance.get(i).billingHourEndTime
+                                    - runningInstance.get(i).billingHourStartTime) / 60)/60);
+            }
+
+            StringBuilder sb = new StringBuilder().append("Total VMs: ").append(runningInstance.size())
+                    .append(" ").append("Cost: ").append(totalCost);
+            bwCostODI.write(sb.toString());
+            bwCostODI.newLine();
+            bwCostODI.flush();
+            bwCostODI.close();
+
+            // Calculate Cost of RI + ODI
+
+            // Calculate Cost of pure ODI.
+            bwCostRiOdi =new BufferedWriter(new FileWriter(COST_OF_RI_ODI_DATA_SET));
+            double totalRiCost = 0.0;
+            for (int i = 0; i < runningRiInstances.size(); i++) {
+
+                totalRiCost += riCost * (((runningRiInstances.get(i).billingHourEndTime
+                        - runningRiInstances.get(i).billingHourStartTime) / 60)/60);
+            }
+            double totalOdiCost = 0.0;
+            for (int i = 0; i < runningOdiInstances.size(); i++) {
+
+                totalOdiCost += odiCost * (((runningOdiInstances.get(i).billingHourEndTime
+                        - runningOdiInstances.get(i).billingHourStartTime) / 60)/60);
+            }
+
+            sb = new StringBuilder().append("Total RI VMs: ").append(runningRiInstances.size())
+                    .append(" ").append("Cost: ").append(totalRiCost)
+                    .append(" ").append("Total ODI VMs: ").append(runningOdiInstances.size())
+                    .append(" ").append("Cost: ").append(totalOdiCost)
+                    .append(" ").append("Total Cost of RI+ODI: ").append(totalOdiCost + totalRiCost)
+                    .append(" ").append("Total Saving over pure ODI: ").append(totalCost - (totalOdiCost + totalRiCost));
+            bwCostRiOdi.write(sb.toString());
+            bwCostRiOdi.newLine();
+            bwCostRiOdi.flush();
+            bwCostRiOdi.close();
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -318,8 +370,8 @@ public class elasticapp {
                                         .append(new Date(runningInstance.get(i).endOfActivePeriod * 1000)).append(" ")
                                         .append("Minutes Used: ").append((runningInstance.get(i).billingHourEndTime
                                                 - runningInstance.get(i).billingHourStartTime) / 60).append(" ")
-                                        .append("Cost: ").append(odiCost * ((runningInstance.get(i).billingHourEndTime
-                                                - runningInstance.get(i).billingHourStartTime) / 60));
+                                        .append("Cost: ").append(odiCost * (((runningInstance.get(i).billingHourEndTime
+                                                - runningInstance.get(i).billingHourStartTime) / 60)/60));
                                 bw.write(sb.toString());
                                 bw.newLine();
                                 bw.flush();
@@ -345,8 +397,8 @@ public class elasticapp {
                                         .append(new Date(runningInstance.get(i).endOfActivePeriod * 1000)).append(" ")
                                         .append("Minutes Used: ").append((runningInstance.get(i).billingHourEndTime
                                                 - runningInstance.get(i).billingHourStartTime) / 60).append(" ")
-                                        .append("Cost: ").append(odiCost * ((runningInstance.get(i).billingHourEndTime
-                                                - runningInstance.get(i).billingHourStartTime) / 60));
+                                        .append("Cost: ").append(odiCost * (((runningInstance.get(i).billingHourEndTime
+                                                - runningInstance.get(i).billingHourStartTime) / 60)/60));
                                 bw.write(sb.toString());
                                 bw.newLine();
                                 bw.flush();
@@ -364,7 +416,6 @@ public class elasticapp {
             }
         }
     }
-
 
 
     private static void scalingDecisionWithRI(long timeStamp) throws IOException {

@@ -167,6 +167,8 @@ public class elasticapp {
 
             bw.close();
             bwRI.close();
+
+            // <editor-fold desc="Write Pure ODI data">
             BufferedWriter bw1 = new BufferedWriter(new FileWriter(VM_BILLING_DATA_SET, true));
             for (int i = 0; i < runningInstance.size(); i++) {
                 if(runningInstance.get(i).canExtend) {
@@ -187,7 +189,9 @@ public class elasticapp {
                 }
             }
             bw1.close();
+            //</editor-fold>
 
+            // <editor-fold desc="Write ODI data">
             bw1 = new BufferedWriter(new FileWriter(VM_BILLING_OF_ODI_DATA_SET, true));
             for (int i = 0; i < runningOdiInstances.size(); i++) {
                 if(runningOdiInstances.get(i).canExtend) {
@@ -208,8 +212,9 @@ public class elasticapp {
                 }
             }
             bw1.close();
+            // </editor-fold>
 
-
+            // <editor-fold desc="Write RI data">
             bw1 = new BufferedWriter(new FileWriter(VM_BILLING_OF_RI_DATA_SET, true));
             for (int i = 0; i < runningRiInstances.size(); i++) {
 
@@ -230,9 +235,9 @@ public class elasticapp {
 
             }
             bw1.close();
+            // </editor-fold>
 
-
-           // Calculate Cost of pure ODI.
+            //<editor-fold desc="Calculate Cost of pure ODI">
             bwCostODI =new BufferedWriter(new FileWriter(COST_OF_PURE_ODI_DATA_SET));
             double totalCost = 0.0;
             for (int i = 0; i < runningInstance.size(); i++) {
@@ -241,14 +246,16 @@ public class elasticapp {
                                     - runningInstance.get(i).billingHourStartTime) / 60)/60);
             }
 
+
             StringBuilder sb = new StringBuilder().append("Total VMs: ").append(runningInstance.size())
                     .append(" ").append("Cost: ").append(totalCost);
             bwCostODI.write(sb.toString());
             bwCostODI.newLine();
             bwCostODI.flush();
             bwCostODI.close();
+            //</editor-fold>
 
-            // Calculate Cost of RI + ODI
+            //<editor-fold desc=" Calculate Cost of RI + ODI">
 
             // Calculate Cost of pure ODI.
             bwCostRiOdi =new BufferedWriter(new FileWriter(COST_OF_RI_ODI_DATA_SET));
@@ -275,7 +282,7 @@ public class elasticapp {
             bwCostRiOdi.newLine();
             bwCostRiOdi.flush();
             bwCostRiOdi.close();
-
+            //</editor-fold>
 
         } catch (IOException e) {
             e.printStackTrace();

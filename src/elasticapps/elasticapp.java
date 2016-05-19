@@ -90,7 +90,7 @@ public class elasticapp {
     // List of ODI
     static ArrayList<VmInstance> runningOdiInstances = new ArrayList<>();
     // Total RI
-    static int totalRI = 3;
+    static int totalRI = 1;
 
 
     public static void main(String[] args) throws IOException, InterruptedException {

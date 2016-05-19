@@ -1,0 +1,250 @@
+userrequestarma = arima(tsdata.userrequest,ic="bic",order=c(2,0,2))
+userrequestarma = arima(tsdata.userrequest,order=c(2,0,2))
+plot(userrequestarma$x,col="red")
+userrequestarma = arima(tsdata.userrequest,order=c(1,0,0))
+plot(userrequestarma$x,col="red")
+userrequestarma = auto.arima(tsdata.userrequest,ic="bic")
+userrequestarma
+?arima
+userrequestarma = arima(tsdata.userrequest,order=c(1,0,0))
+userrequestarma
+userrequestarma = arima(tsdata.userrequest,order=c(1,0,1))
+userrequestarma
+userrequestarma = Arima(tsdata.userrequest,order=c(1,0,0))
+userrequestarma$x
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="blue")
+userrequestarma = arima(tsdata.userrequest[1:120,],order=c(1,0,1))
+plot(userrequestarma$x,col="red")
+dim(tsdata.userrequest)
+tsdata.capacity
+tsdata.userrequest
+tsdata.userrequest[1,]
+tsdata.userrequest[1:120,]
+userrequestarma = arima(tsdata.userrequest[1:120,],order=c(1,0,1))
+userrequestarma
+userrequestarma = arima(tsdata.userrequest,order=c(1,0,1))
+userrequestarma
+plot(userrequestarma$x,col="red")
+userrequestarma = Arima(tsdata.userrequest[1:120,],order=c(1,0,1))
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="blue")
+userrequestarma = Arima(tsdata.userrequest[1:120,],order=c(2,0,2))
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="blue")
+userrequestarma = auto.arima(tsdata.userrequest,ic="bic")
+userrequestarma = auto.arima(tsdata.userrequest[1:120,],ic="bic")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="blue")
+userrequestarma = auto.arima(tsdata.vmdemand[1:120,],ic="bic")
+plot(userrequestarma$x,col="red")
+userrequestarma = auto.arima(tsdata.vmdemand,ic="bic")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="blue")
+plot(userrequestarma$x[1:1200],col="red")
+plot(userrequestarma$x[1:2500],col="red")
+lines(fitted(userrequestarma[1:2500]),col="blue")
+lines(fitted(userrequestarma)[1:2500],col="blue")
+plot(userrequestarma$residuals)
+userrequestarma = auto.arima(tsdata.vmdemand[1:2500,],ic="bic")
+userrequestarma
+plot(userrequestarma$residuals)
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="blue")
+userrequestarma = auto.arima(tsdata.userrequest[1:2500,],ic="bic")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="blue")
+userrequestarma = auto.arima(tsdata.userrequest[1:360,],ic="bic")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="blue")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma)+5,col="blue")
+lines(fitted(userrequestarma)+1,col="blue")
+lines(fitted(userrequestarma)+1,col="green")
+lines(fitted(userrequestarma)+2,col="yellow")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma)+2,col="yellow")
+userrequestarma = auto.arima(tsdata.userrequest[1:1440,],ic="bic")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma)+2,col="yellow")
+lines(fitted(userrequestarma),col="green")
+userrequestarma = auto.arima(tsdata.userrequest[500:1440,],ic="bic")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="blue")
+lines(fitted(userrequestarma),col="green")
+lines(fitted(userrequestarma),col="blue")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="green")
+plot(userrequestarma$x,col="red")
+lines(fitted(userrequestarma),col="green")
+predict(userrequestarma,n.ahead=60)
+data = predict(userrequestarma,n.ahead=60)
+lines(data,col=black)
+lines(data,col="black")
+data
+lines(data$pred,col="black")
+plot(userrequestarma$x[1:12],col="red")
+plot(userrequestarma$x[1:120],col="red")
+plot(userrequestarma$x[1:240],col="red")
+plot(userrequestarma$x,col="red")
+plot(userrequestarma$x[1:120],col="red",lty="2")
+plot(userrequestarma$x[1:120],col="red",lty="1")
+plot(userrequestarma$x[1:120],col="red",lty="3")
+plot(userrequestarma$x[1:120],col="red",lty="2")
+plot(userrequestarma$x[1:120],col="red",lty=2)
+plot(userrequestarma$x[1:120],col="red",lty=1)
+plot(userrequestarma$x[1:120],col="red",lty=3)
+plot(userrequestarma$x[1:120],col="red",lty=3, lwd=3, pch=15)
+plot(userrequestarma$x[1:120],col="red",lty=3, lwd=3, pch=15,xlim=240)
+plot(userrequestarma$x[1:120],col="red",lty=3, lwd=3, pch=15,xlim=c(240))
+?plot
+plot(userrequestarma$x[1:120],col="red",lty=3, lwd=3, pch=15,xlim=c(0,240))
+lines(data$pred,col="black")
+lines(data$pred,col="black",lty=3, lwd=3, pch=15)
+plot(userrequestarma$x[110:120],col="red",lty=3, lwd=3, pch=15,xlim=c(0,240))
+lines(data$pred,col="black",lty=3, lwd=3, pch=15)
+data
+data = predict(userrequestarma,n.ahead=60)
+plot(userrequestarma$x,col="red",lty=3, lwd=3, pch=15,xlim=c(0,240))
+plot(userrequestarma$x,col="red")
+data = predict(userrequestarma,n.ahead=5)
+data$pred
+userrequestarma$x
+userrequestarma = auto.arima(tsdata.userrequest[500:1440,],ic="bic")
+userrequestarma$x
+data = predict(userrequestarma,n.ahead=5)
+data$pred
+dim(vm_demand_available_billing)
+vm_demand_available_billing$ActiveSessions[1440:1450,]
+vm_demand_available_billing$ActiveSessions[1440:1450]
+data = predict(userrequestarma,n.ahead=200)
+vm_demand_available_billing$ActiveSessions[1440:1450]
+vm_demand_available_billing$ActiveSessions[1640:1650]
+data$pred[]
+userrequestarma
+source('/Users/subramanya/Documents/workspace/AutoscaleAnalyser/prediction-model/ensemble.R')
+source('/Users/subramanya/Documents/workspace/AutoscaleAnalyser/prediction-model/ensemble.R')
+source('/Users/subramanya/Documents/workspace/AutoscaleAnalyser/prediction-model/ensemble.R')
+source('/Users/subramanya/Documents/workspace/AutoscaleAnalyser/prediction-model/ensemble.R')
+source('/Users/subramanya/Documents/workspace/AutoscaleAnalyser/prediction-model/ensemble.R')
+source('/Users/subramanya/Documents/workspace/AutoscaleAnalyser/prediction-model/ensemble.R')
+cd
+setwd(/Users/subramanya/Documents/workspace/AutoscaleAnalyser/simulation)
+setwd('/Users/subramanya/Documents/workspace/AutoscaleAnalyser/simulation')
+source('../prediction-model/ensemble.R')
+setwd('/Users/subramanya/Documents/workspace/elasticapps/r_scripts/)
+setwd('/Users/subramanya/Documents/workspace/elasticapps/r_scripts/')
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+userrequestarma
+summary(userrequestarma)
+summary(data)
+summary(data$se)
+data$se
+data
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+warnings()
+fmodel
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+fmodel
+fmodel
+source('create_vm_active_billing.r')
+fmodel
+fmodel$x
+fmodel$mean
+fmodel$upper
+fmodel$upper[0]
+fmodel$upper
+fmodel$upper[1]
+plot(fmodel)
+source('create_vm_active_billing.r')
+plot(tsdata.userrequest,col="red")
+lines(arimaPredicted,col="green")
+arimaPredicted
+plot(arimaPredicted)
+source('create_vm_active_billing.r')
+arimaPredicted
+dim(tsdata.capacity)
+fmodel$method
+fmodel$model
+fmodel$level
+fmodel$mean
+fmodel$lower
+fmodel$fitted
+fmodel$residuals
+source('create_vm_active_billing.r')
+plot(tsdata.userrequest[4500:500],col="red")
+plot(tsdata.userrequest[4500:500,],col="red")
+dim(tsdata.userrequest)
+tsdata.userrequest\
+tsdata.userrequest
+tsdata.userrequest[4500]
+tsdata.userrequest[4500:]
+tsdata.userrequest[4500:4999]
+plot(tsdata.userrequest[4500:4999],col="red")
+line(arimaPredicted,col="green")
+line(arimaPredicted,col="blue")
+arimaPredicted
+dim(arimaPredicted)
+lines(arimaPredicted)
+lines(arimaPredicted,col="blue")
+tsdata.userrequest[4500:4999]
+dim(arimaPredicted)
+length(arimaPredicted)
+tsdata.userrequest[4500:4620]
+plot(tsdata.userrequest[4500:4620],col="red")
+lines(arimaPredicted,col="green")
+zoo(arimaPredicted,vm_demand_available_billing$StampToPosxTime[4500:4620])
+lines(zoo(arimaPredicted,vm_demand_available_billing$StampToPosxTime[4500:4620]),col="blue")
+source('create_vm_active_billing.r')
+plot(tsdata.userrequest[4500:4620],col="red")
+lines(arimaPredicted.prediction,col="blue")
+source('create_vm_active_billing.r')
+plot(tsdata.userrequest[4500:4620],col="red")
+lines(arimaPredicted.prediction,col="blue")
+source('create_vm_active_billing.r')
+source('create_vm_active_billing.r')
+plot(tsdata.userrequest[4500:4620],col="red")
+lines(arimaPredicted.prediction,col="blue")
+plot(tsdata.userrequest[4500:4620],col="red")
+lines(arimaPredicted.prediction,col="blue")
+plot(tsdata.userrequest[4500:4620],col="red",xlim=c(0,120))
+plot(tsdata.userrequest[4500:4620],col="red",xlim=c(0,120))
+tsdata.userrequest[4500:4620]
+plot(tsdata.userrequest[4500:4620],col="red")
+lines(arimaPredicted.prediction,col="blue")
+lines(arimaPredicted.prediction[1:120],col="blue")
+plot(tsdata.userrequest[4500:4620],col="red")
+lines(arimaPredicted.prediction[1:120],col="blue")
+lines(arimaPredicted.prediction[1:120],col="blue")
+source('create_vm_active_billing.r')
+warnings()
+plot(tsdata.userrequest[4500:4620],col="red")
+lines(arimaPredicted.prediction[1:120],col="blue")
+lines(arimaPredicted.prediction,col="blue")
+acf(tsdata.userrequest)
+pacf(tsdata.userrequest)
+acf(tsdata.userrequest)
+pacf(tsdata.userrequest)
+stl(tsdata.userrequest)
+stl(log(tsdata.userrequest)
+stl(tsdata.userrequest))
+stl(log(tsdata.userrequest))
+plot(stl(log(tsdata.userrequest)))
+plot(stl(log(tsdata.userrequest),s.window="periodic"))
+plot(stl(tsdata.userrequest,s.window="periodic"))
+acf(vm_demand_available_billing$ActiveSessions)
+plot(stl(tsdata.userrequest,s.window="periodic"))
+plot(tsdata.userrequest[4500:4620],col="red")
+lines(arimaPredicted.prediction,col="blue")
+acf(tsdata.userrequest[4500:4620])
+pacf(tsdata.userrequest[4500:4620])
